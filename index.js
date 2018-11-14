@@ -37,7 +37,9 @@ let store = { neighborhoods: [], meals: [], customers: [], deliveries: [] };
       return [...new Set(allCustomers)];
     }
      static byPrice() {
-      return store.meals.sort((a, b) => a.price < b.price);
+      return store.meals.sort(function(a, b) {
+        return b.price - a.price;
+      }
     }
   };
 })();
